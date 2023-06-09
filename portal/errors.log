@@ -1,0 +1,659 @@
+2023-06-09 22:31:14,574 DEBUG (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:31:14,589 DEBUG (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:06,075 DEBUG (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-06-09 17:32:06.075021' AND "django_session"."session_key" = '06z99z25heknjbzs0a6b2xpgzngmg1wy') LIMIT 21; args=('2023-06-09 17:32:06.075021', '06z99z25heknjbzs0a6b2xpgzngmg1wy'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:06,075 DEBUG (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:06,091 DEBUG Exception while resolving variable 'post' in template 'post_edit.html'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('post', [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000000005CA5550>>, 'request': <WSGIRequest: GET '/posts/news/create/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': PermWrapper(<SimpleLazyObject: <User: admin>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/posts/news/create/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <PostForm bound=False, valid=Unknown, fields=(name;description;category)>, 'view': <simpleapp.views.NewsCreate object at 0x0000000005C29250>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n '>, <IfNode>, <TextNode: '\n\n<hr>\n\n<form action="" m'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000000005D40190>, <TextNode: '\n    '>, <Variable Node: form.as_p>, <TextNode: '\n    <input type="submit"'>]>}])), <traceback object at 0x0000000005C80400>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [post] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000000005CA5550>>, 'request': <WSGIRequest: GET '/posts/news/create/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': PermWrapper(<SimpleLazyObject: <User: admin>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/posts/news/create/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <PostForm bound=False, valid=Unknown, fields=(name;description;category)>, 'view': <simpleapp.views.NewsCreate object at 0x0000000005C29250>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n '>, <IfNode>, <TextNode: '\n\n<hr>\n\n<form action="" m'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000000005D40190>, <TextNode: '\n    '>, <Variable Node: form.as_p>, <TextNode: '\n    <input type="submit"'>]>}]
+2023-06-09 22:32:06,097 DEBUG Exception while resolving variable 'post' in template 'post_edit.html'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('post', [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000000005CA5550>>, 'request': <WSGIRequest: GET '/posts/news/create/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': PermWrapper(<SimpleLazyObject: <User: admin>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/posts/news/create/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <PostForm bound=False, valid=Unknown, fields=(name;description;category)>, 'view': <simpleapp.views.NewsCreate object at 0x0000000005C29250>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n '>, <IfNode>, <TextNode: '\n\n<hr>\n\n<form action="" m'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000000005D40190>, <TextNode: '\n    '>, <Variable Node: form.as_p>, <TextNode: '\n    <input type="submit"'>]>}])), <traceback object at 0x0000000005C802C0>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [post] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000000005CA5550>>, 'request': <WSGIRequest: GET '/posts/news/create/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': PermWrapper(<SimpleLazyObject: <User: admin>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/posts/news/create/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <PostForm bound=False, valid=Unknown, fields=(name;description;category)>, 'view': <simpleapp.views.NewsCreate object at 0x0000000005C29250>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n '>, <IfNode>, <TextNode: '\n\n<hr>\n\n<form action="" m'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000000005D40190>, <TextNode: '\n    '>, <Variable Node: form.as_p>, <TextNode: '\n    <input type="submit"'>]>}]
+2023-06-09 22:32:06,108 DEBUG (0.015) SELECT "simpleapp_category"."id", "simpleapp_category"."name" FROM "simpleapp_category"; args=(); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:06,110 INFO "GET /posts/news/create/ HTTP/1.1" 200 2894 C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:32:06,194 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <URLPattern list> (admin:admin) 'admin/'>)), <traceback object at 0x00000000060F9380>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/news/create/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+2023-06-09 22:32:06,223 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>)), <traceback object at 0x00000000060F9300>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/news/create/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>
+2023-06-09 22:32:06,234 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>)), <traceback object at 0x000000000605A340>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/news/create/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>
+2023-06-09 22:32:06,241 DEBUG (0.000) SELECT "django_site"."id", "django_site"."domain", "django_site"."name" FROM "django_site" WHERE "django_site"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:06,243 DEBUG (0.000) SELECT "django_flatpage"."id", "django_flatpage"."url", "django_flatpage"."title", "django_flatpage"."content", "django_flatpage"."enable_comments", "django_flatpage"."template_name", "django_flatpage"."registration_required" FROM "django_flatpage" INNER JOIN "django_flatpage_sites" ON ("django_flatpage"."id" = "django_flatpage_sites"."flatpage_id") WHERE ("django_flatpage_sites"."site_id" = 1 AND "django_flatpage"."url" = '/posts/news/create/js/scripts.js') LIMIT 21; args=(1, '/posts/news/create/js/scripts.js'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:06,244 DEBUG (0.000) SELECT "django_flatpage"."id", "django_flatpage"."url", "django_flatpage"."title", "django_flatpage"."content", "django_flatpage"."enable_comments", "django_flatpage"."template_name", "django_flatpage"."registration_required" FROM "django_flatpage" INNER JOIN "django_flatpage_sites" ON ("django_flatpage"."id" = "django_flatpage_sites"."flatpage_id") WHERE ("django_flatpage_sites"."site_id" = 1 AND "django_flatpage"."url" = '/posts/news/create/js/scripts.js/') LIMIT 21; args=(1, '/posts/news/create/js/scripts.js/'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:06,270 DEBUG (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-06-09 17:32:06.269621' AND "django_session"."session_key" = '06z99z25heknjbzs0a6b2xpgzngmg1wy') LIMIT 21; args=('2023-06-09 17:32:06.269621', '06z99z25heknjbzs0a6b2xpgzngmg1wy'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:06,271 DEBUG (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:06,245 WARNING Not Found: /posts/news/create/js/scripts.js C:\Users\User\Desktop\news\venv\lib\site-packages\django\utils\log.py None
+2023-06-09 22:32:06,304 WARNING "GET /posts/news/create/js/scripts.js HTTP/1.1" 404 4684 C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:32:10,288 DEBUG (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-06-09 17:32:10.273021' AND "django_session"."session_key" = '06z99z25heknjbzs0a6b2xpgzngmg1wy') LIMIT 21; args=('2023-06-09 17:32:10.273021', '06z99z25heknjbzs0a6b2xpgzngmg1wy'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,288 DEBUG (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,290 DEBUG (0.000) SELECT "simpleapp_category"."id", "simpleapp_category"."name" FROM "simpleapp_category" WHERE "simpleapp_category"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,291 DEBUG (0.000) SELECT 1 AS "a" FROM "simpleapp_category" WHERE "simpleapp_category"."id" = 1 LIMIT 1; args=(1, 1); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,291 DEBUG (0.000) SELECT 1 AS "a" FROM "simpleapp_post" WHERE "simpleapp_post"."name" = 'мм' LIMIT 1; args=(1, 'мм'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,291 DEBUG Exception while resolving variable 'post' in template 'post_edit.html'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('post', [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000000005874550>>, 'request': <WSGIRequest: POST '/posts/news/create/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': PermWrapper(<SimpleLazyObject: <User: admin>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/posts/news/create/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <PostForm bound=True, valid=False, fields=(name;description;category)>, 'view': <simpleapp.views.NewsCreate object at 0x0000000005B855E0>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n '>, <IfNode>, <TextNode: '\n\n<hr>\n\n<form action="" m'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000000005D40190>, <TextNode: '\n    '>, <Variable Node: form.as_p>, <TextNode: '\n    <input type="submit"'>]>}])), <traceback object at 0x0000000005B3A0C0>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [post] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000000005874550>>, 'request': <WSGIRequest: POST '/posts/news/create/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': PermWrapper(<SimpleLazyObject: <User: admin>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/posts/news/create/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <PostForm bound=True, valid=False, fields=(name;description;category)>, 'view': <simpleapp.views.NewsCreate object at 0x0000000005B855E0>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n '>, <IfNode>, <TextNode: '\n\n<hr>\n\n<form action="" m'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000000005D40190>, <TextNode: '\n    '>, <Variable Node: form.as_p>, <TextNode: '\n    <input type="submit"'>]>}]
+2023-06-09 22:32:10,292 DEBUG Exception while resolving variable 'post' in template 'post_edit.html'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('post', [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000000005874550>>, 'request': <WSGIRequest: POST '/posts/news/create/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': PermWrapper(<SimpleLazyObject: <User: admin>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/posts/news/create/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <PostForm bound=True, valid=False, fields=(name;description;category)>, 'view': <simpleapp.views.NewsCreate object at 0x0000000005B855E0>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n '>, <IfNode>, <TextNode: '\n\n<hr>\n\n<form action="" m'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000000005D40190>, <TextNode: '\n    '>, <Variable Node: form.as_p>, <TextNode: '\n    <input type="submit"'>]>}])), <traceback object at 0x0000000005B3A0C0>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'post'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [post] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000000005874550>>, 'request': <WSGIRequest: POST '/posts/news/create/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': PermWrapper(<SimpleLazyObject: <User: admin>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/posts/news/create/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <PostForm bound=True, valid=False, fields=(name;description;category)>, 'view': <simpleapp.views.NewsCreate object at 0x0000000005B855E0>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n '>, <IfNode>, <TextNode: '\n\n<hr>\n\n<form action="" m'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000000005D40190>, <TextNode: '\n    '>, <Variable Node: form.as_p>, <TextNode: '\n    <input type="submit"'>]>}]
+2023-06-09 22:32:10,295 DEBUG (0.000) SELECT "simpleapp_category"."id", "simpleapp_category"."name" FROM "simpleapp_category"; args=(); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,296 INFO "POST /posts/news/create/ HTTP/1.1" 200 2995 C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:32:10,365 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <URLPattern list> (admin:admin) 'admin/'>)), <traceback object at 0x0000000005B44F40>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/news/create/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+2023-06-09 22:32:10,367 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>)), <traceback object at 0x0000000005B44F00>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/news/create/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>
+2023-06-09 22:32:10,369 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>)), <traceback object at 0x0000000005B3ACC0>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/news/create/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>
+2023-06-09 22:32:10,373 DEBUG (0.000) SELECT "django_flatpage"."id", "django_flatpage"."url", "django_flatpage"."title", "django_flatpage"."content", "django_flatpage"."enable_comments", "django_flatpage"."template_name", "django_flatpage"."registration_required" FROM "django_flatpage" INNER JOIN "django_flatpage_sites" ON ("django_flatpage"."id" = "django_flatpage_sites"."flatpage_id") WHERE ("django_flatpage_sites"."site_id" = 1 AND "django_flatpage"."url" = '/posts/news/create/js/scripts.js') LIMIT 21; args=(1, '/posts/news/create/js/scripts.js'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,375 DEBUG (0.000) SELECT "django_flatpage"."id", "django_flatpage"."url", "django_flatpage"."title", "django_flatpage"."content", "django_flatpage"."enable_comments", "django_flatpage"."template_name", "django_flatpage"."registration_required" FROM "django_flatpage" INNER JOIN "django_flatpage_sites" ON ("django_flatpage"."id" = "django_flatpage_sites"."flatpage_id") WHERE ("django_flatpage_sites"."site_id" = 1 AND "django_flatpage"."url" = '/posts/news/create/js/scripts.js/') LIMIT 21; args=(1, '/posts/news/create/js/scripts.js/'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,381 DEBUG (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-06-09 17:32:10.380621' AND "django_session"."session_key" = '06z99z25heknjbzs0a6b2xpgzngmg1wy') LIMIT 21; args=('2023-06-09 17:32:10.380621', '06z99z25heknjbzs0a6b2xpgzngmg1wy'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,382 DEBUG (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:10,376 WARNING Not Found: /posts/news/create/js/scripts.js C:\Users\User\Desktop\news\venv\lib\site-packages\django\utils\log.py None
+2023-06-09 22:32:10,407 WARNING "GET /posts/news/create/js/scripts.js HTTP/1.1" 404 4684 C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:32:12,927 DEBUG (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-06-09 17:32:12.927421' AND "django_session"."session_key" = '06z99z25heknjbzs0a6b2xpgzngmg1wy') LIMIT 21; args=('2023-06-09 17:32:12.927421', '06z99z25heknjbzs0a6b2xpgzngmg1wy'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:12,927 DEBUG (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:12,927 DEBUG (0.000) SELECT "simpleapp_category"."id", "simpleapp_category"."name" FROM "simpleapp_category" WHERE "simpleapp_category"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:12,927 DEBUG (0.000) SELECT 1 AS "a" FROM "simpleapp_category" WHERE "simpleapp_category"."id" = 1 LIMIT 1; args=(1, 1); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:12,927 DEBUG (0.000) SELECT 1 AS "a" FROM "simpleapp_post" WHERE "simpleapp_post"."name" = 'ммвававава' LIMIT 1; args=(1, 'ммвававава'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:12,927 DEBUG (0.000) SELECT "simpleapp_author"."id", "simpleapp_author"."authorUser_id", "simpleapp_author"."ratingAuthor" FROM "simpleapp_author" WHERE "simpleapp_author"."authorUser_id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:12,944 DEBUG (0.015) INSERT INTO "simpleapp_post" ("author_id", "categoryType", "name", "description", "createDate", "rating", "category_id") VALUES (1, 'NW', 'ммвававава', 'ваавыав', '2023-06-09 17:32:12.927421', 0, 1); args=[1, 'NW', 'ммвававава', 'ваавыав', '2023-06-09 17:32:12.927421', 0, 1]; alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:12,946 DEBUG (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" INNER JOIN "simpleapp_category_subscribers" ON ("auth_user"."id" = "simpleapp_category_subscribers"."user_id") WHERE "simpleapp_category_subscribers"."category_id" = 1; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:12,948 INFO "POST /posts/news/create/ HTTP/1.1" 302 0 C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:32:12,985 DEBUG (0.000) SELECT "simpleapp_post"."id", "simpleapp_post"."author_id", "simpleapp_post"."categoryType", "simpleapp_post"."name", "simpleapp_post"."description", "simpleapp_post"."createDate", "simpleapp_post"."rating", "simpleapp_post"."category_id" FROM "simpleapp_post" WHERE "simpleapp_post"."id" = 63 LIMIT 21; args=(63,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:13,000 INFO "GET /posts/63 HTTP/1.1" 200 2296 C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:32:13,048 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <URLPattern list> (admin:admin) 'admin/'>)), <traceback object at 0x0000000005C05D40>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+2023-06-09 22:32:13,067 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>)), <traceback object at 0x0000000005B59740>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>
+2023-06-09 22:32:13,068 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>)), <traceback object at 0x0000000005BF43C0>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>
+2023-06-09 22:32:13,071 DEBUG (0.000) SELECT "django_flatpage"."id", "django_flatpage"."url", "django_flatpage"."title", "django_flatpage"."content", "django_flatpage"."enable_comments", "django_flatpage"."template_name", "django_flatpage"."registration_required" FROM "django_flatpage" INNER JOIN "django_flatpage_sites" ON ("django_flatpage"."id" = "django_flatpage_sites"."flatpage_id") WHERE ("django_flatpage_sites"."site_id" = 1 AND "django_flatpage"."url" = '/posts/js/scripts.js') LIMIT 21; args=(1, '/posts/js/scripts.js'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:13,072 DEBUG (0.000) SELECT "django_flatpage"."id", "django_flatpage"."url", "django_flatpage"."title", "django_flatpage"."content", "django_flatpage"."enable_comments", "django_flatpage"."template_name", "django_flatpage"."registration_required" FROM "django_flatpage" INNER JOIN "django_flatpage_sites" ON ("django_flatpage"."id" = "django_flatpage_sites"."flatpage_id") WHERE ("django_flatpage_sites"."site_id" = 1 AND "django_flatpage"."url" = '/posts/js/scripts.js/') LIMIT 21; args=(1, '/posts/js/scripts.js/'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:13,075 DEBUG (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-06-09 17:32:13.075021' AND "django_session"."session_key" = '06z99z25heknjbzs0a6b2xpgzngmg1wy') LIMIT 21; args=('2023-06-09 17:32:13.075021', '06z99z25heknjbzs0a6b2xpgzngmg1wy'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:13,076 DEBUG (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:13,072 WARNING Not Found: /posts/js/scripts.js C:\Users\User\Desktop\news\venv\lib\site-packages\django\utils\log.py None
+2023-06-09 22:32:13,103 WARNING "GET /posts/js/scripts.js HTTP/1.1" 404 4648 C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:32:14,006 DEBUG (0.000) SELECT COUNT(*) AS "__count" FROM "simpleapp_post"; args=(); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,007 DEBUG (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-06-09 17:32:14.006421' AND "django_session"."session_key" = '06z99z25heknjbzs0a6b2xpgzngmg1wy') LIMIT 21; args=('2023-06-09 17:32:14.006421', '06z99z25heknjbzs0a6b2xpgzngmg1wy'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,008 DEBUG (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,009 DEBUG (0.000) SELECT 1 AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 1 AND "auth_group"."name" = 'authors') LIMIT 1; args=(1, 1, 'authors'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,015 DEBUG (0.000) SELECT "simpleapp_post"."id", "simpleapp_post"."author_id", "simpleapp_post"."categoryType", "simpleapp_post"."name", "simpleapp_post"."description", "simpleapp_post"."createDate", "simpleapp_post"."rating", "simpleapp_post"."category_id" FROM "simpleapp_post" ORDER BY "simpleapp_post"."createDate" DESC LIMIT 5; args=(); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,017 DEBUG (0.016) SELECT "simpleapp_category"."id", "simpleapp_category"."name" FROM "simpleapp_category" WHERE "simpleapp_category"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,019 DEBUG (0.000) SELECT "simpleapp_category"."id", "simpleapp_category"."name" FROM "simpleapp_category" WHERE "simpleapp_category"."id" = 2 LIMIT 21; args=(2,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,020 DEBUG (0.000) SELECT "simpleapp_category"."id", "simpleapp_category"."name" FROM "simpleapp_category" WHERE "simpleapp_category"."id" = 2 LIMIT 21; args=(2,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,021 DEBUG (0.000) SELECT "simpleapp_category"."id", "simpleapp_category"."name" FROM "simpleapp_category" WHERE "simpleapp_category"."id" = 2 LIMIT 21; args=(2,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,022 DEBUG (0.000) SELECT "simpleapp_category"."id", "simpleapp_category"."name" FROM "simpleapp_category" WHERE "simpleapp_category"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,023 INFO "GET /posts/ HTTP/1.1" 200 5683 C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:32:14,040 INFO - Broken pipe from ('127.0.0.1', 65522) C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:32:14,078 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <URLPattern list> (admin:admin) 'admin/'>)), <traceback object at 0x0000000005BD9900>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+2023-06-09 22:32:14,087 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>)), <traceback object at 0x0000000005BD98C0>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>
+2023-06-09 22:32:14,102 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>)), <traceback object at 0x0000000005B8A0C0>)
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\Users\\User\\Desktop\\news\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '' [name='post_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern '<int:pk>' [name='post_detail']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/create/' [name='article_create']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/update/' [name='news_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/update/' [name='article_update']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'news/<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'articles/<int:pk>/delete/' [name='article_delete']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'subscriptions/' [name='subscriptions']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>], [<URLResolver <module 'simpleapp.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\simpleapp\\urls.py'> (None:None) 'posts/'>, <URLPattern 'go'>]], 'path': 'posts/js/scripts.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\news\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'accounts.urls' from 'C:\\Users\\User\\Desktop\\news\\portal\\accounts\\urls.py'> (None:None) 'accounts/'>
+2023-06-09 22:32:14,113 DEBUG (0.015) SELECT "django_flatpage"."id", "django_flatpage"."url", "django_flatpage"."title", "django_flatpage"."content", "django_flatpage"."enable_comments", "django_flatpage"."template_name", "django_flatpage"."registration_required" FROM "django_flatpage" INNER JOIN "django_flatpage_sites" ON ("django_flatpage"."id" = "django_flatpage_sites"."flatpage_id") WHERE ("django_flatpage_sites"."site_id" = 1 AND "django_flatpage"."url" = '/posts/js/scripts.js') LIMIT 21; args=(1, '/posts/js/scripts.js'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,124 DEBUG (0.000) SELECT "django_flatpage"."id", "django_flatpage"."url", "django_flatpage"."title", "django_flatpage"."content", "django_flatpage"."enable_comments", "django_flatpage"."template_name", "django_flatpage"."registration_required" FROM "django_flatpage" INNER JOIN "django_flatpage_sites" ON ("django_flatpage"."id" = "django_flatpage_sites"."flatpage_id") WHERE ("django_flatpage_sites"."site_id" = 1 AND "django_flatpage"."url" = '/posts/js/scripts.js/') LIMIT 21; args=(1, '/posts/js/scripts.js/'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,148 DEBUG (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-06-09 17:32:14.148421' AND "django_session"."session_key" = '06z99z25heknjbzs0a6b2xpgzngmg1wy') LIMIT 21; args=('2023-06-09 17:32:14.148421', '06z99z25heknjbzs0a6b2xpgzngmg1wy'); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,149 DEBUG (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:32:14,132 WARNING Not Found: /posts/js/scripts.js C:\Users\User\Desktop\news\venv\lib\site-packages\django\utils\log.py None
+2023-06-09 22:32:14,182 WARNING "GET /posts/js/scripts.js HTTP/1.1" 404 4648 C:\Users\User\Desktop\news\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-06-09 22:35:23,959 DEBUG (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:35:23,963 DEBUG (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:41:37,179 DEBUG (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:41:37,179 DEBUG (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:45:28,188 DEBUG (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None
+2023-06-09 22:45:28,188 DEBUG (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default C:\Users\User\Desktop\news\venv\lib\site-packages\django\db\backends\utils.py None

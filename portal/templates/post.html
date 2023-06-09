@@ -1,0 +1,24 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% load cache %}
+    {% cache 30 title %}
+        {% block title %}
+        Post
+        {% endblock title %}
+    {% endcache %}
+
+{% block content %}
+<h1>{{ post.name|tsenzor }}</h1>
+<h2>{{ post.description|tsenzor }}</h2>
+<h3>{{ post.createDate }}</h3>
+
+
+<button>
+    <a class="nav-link" href="{% url 'post_list' %}">
+        <h4><strong>назад</strong></h4>
+    </a>
+</button>
+
+{% endblock content %}

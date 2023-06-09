@@ -1,0 +1,82 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% load custom_tags %}
+
+{% load cache %}
+    {% cache 30 title %}
+        {% block title %}
+        Post
+        {% endblock title %}
+    {% endcache %}
+
+{% block content %}
+   <h1>Все посты категории {{ category}}</h1>
+
+
+
+{% if perms.simpleapp.add_post %}
+    <<a href="{% url 'news_create' %}">Создать новость</a>
+        {% endif %}
+
+{% if perms.simpleapp.add_post %}
+    <<a href="{% url 'article_create' %}">Создать статью</a>
+    {% endif %}
+
+  {% if not subscriber %}
+        <p class="text-center"><a href="{% url 'subscribe' category.id %}" class="btn btn-secondary btn-sm">Подписаться</a></p>
+    {% endif %}
+
+
+
+
+<ul class="list-group list-group-flush"
+    {% for post in category_news_list %}
+           <li class="list-group-item">
+               <small class="fw-bold">{{post.createDate|date:'d M Y'}}</small>
+               <a href="{% url 'post_detail' post.id %}">{{post.name}}</a>
+               <small class="text-muted">(автор: {{post.author}})</small><br>
+               <small class="fw-bold">категории:
+
+                        <a href="{% url 'category_list' category.id %}">{{ category }}</a>
+
+               </small>
+               <p> {{post.description|truncatechars:20|tsenzor}}</p>
+
+               <td>{{ post.categoryType}}</td>
+               {% if post.categoryType == 'NW' and perms.simpleapp.change_post %}
+                   <td> <a href="{% url 'news_update' pk=post.pk %}">Edit</a></td>
+               {% elif post.categoryType == 'NW' and  perms.simpleapp.delete_post %}
+                    <td><a href="{% url 'news_delete' pk=post.pk %}">Delete</a></td>
+               {% elif post.categoryType == 'AR' and perms.simpleapp.change_post %}
+                    <td><a href="{% url 'article_update' pk=post.pk %}">Edit</a></td>
+               {% elif post.categoryType == 'AR' and perms.simpleapp.delete_post %}
+                    <td><a href="{% url 'article_delete' pk=post.pk %}">Delete</a></td>
+               {% endif %}
+           </li>
+            {% endfor %}
+
+       </table>
+
+
+   {% if page_obj.has_previous %}
+       {# Для каждой ссылки пагинации указываем обработку через новый тег #}
+       <a href="?{% url_replace page=1 %}">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           ...
+           <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+       {% endif %}
+   {% endif %}
+
+   {{ page_obj.number }}
+
+   {% if page_obj.has_next %}
+       <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+
+{% endblock content %}
